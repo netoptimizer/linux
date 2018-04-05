@@ -226,11 +226,11 @@ page run by David S. Miller on net-next that provides guidance:
 Q: Verifier changes and test cases
 ----------------------------------
 Q: I made a BPF verifier change, do I need to add test cases for
-BPF kernel selftests?
+BPF kernel selftests_?
 
 A: If the patch has changes to the behavior of the verifier, then yes,
 it is absolutely necessary to add test cases to the BPF kernel
-selftests suite. If they are not present and we think they are
+selftests_ suite. If they are not present and we think they are
 needed, then we might ask for them before accepting any changes.
 
 In particular, test_verifier.c is tracking a high number of BPF test
@@ -245,7 +245,7 @@ be subject to change.
 Q: samples/bpf preference vs selftests?
 ---------------------------------------
 Q: When should I add code to `samples/bpf/`_ and when to BPF kernel
-selftests?
+selftests_ ?
 
 A: In general, we prefer additions to BPF kernel selftests rather than
 `samples/bpf/`_. The rationale is very simple: kernel selftests are
@@ -603,5 +603,6 @@ Otherwise, you can use bpf target.
 .. _Documentation/networking/netdev-FAQ.txt: ../networking/netdev-FAQ.txt
 .. _netdev FAQ: ../networking/netdev-FAQ.txt
 .. _samples/bpf/: ../../samples/bpf/
+.. _selftests: ../../tools/testing/selftests/bpf/
 
 Happy BPF hacking!
