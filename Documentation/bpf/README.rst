@@ -14,5 +14,5 @@ Two sets of Questions and Answers (Q&A) are maintained.
 * QA for developers interacting with BPF subsystem: bpf_devel_QA_
 
 .. Links:
-.. _bpf_design_QA: bpf_design_QA.txt
-.. _bpf_devel_QA:  bpf_devel_QA.txt
+.. _bpf_design_QA: bpf_design_QA.rst
+.. _bpf_devel_QA:  bpf_devel_QA.rst
