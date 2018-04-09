@@ -117,7 +117,8 @@ net and net-next are always the main trees targeted for integration.
 
 The pull requests will contain a high-level summary of the accumulated
 patches and can be searched on netdev kernel mailing list through the
-following subject lines (yyyy-mm-dd is the date of the pull request)::
+following subject lines (``yyyy-mm-dd`` is the date of the pull
+request)::
 
   pull-request: bpf yyyy-mm-dd
   pull-request: bpf-next yyyy-mm-dd
@@ -154,7 +155,7 @@ order to reduce potential conflicts.
 
 In case the patch or patch series has to be reworked and sent out
 again in a second or later revision, it is also required to add a
-version number (v2, v3, ...) into the subject prefix::
+version number (``v2``, ``v3``, ...) into the subject prefix::
 
   git format-patch --subject-prefix='PATCH net-next v2' start..finish
 
@@ -274,8 +275,8 @@ bpftool should be extended as well to support dumping them.
 
 Q: When should I add code to iproute2's BPF loader?
 ---------------------------------------------------
-A: For UAPI changes related to the XDP or tc layer (e.g. cls_bpf), the
-convention is that those control-path related changes are added to
+A: For UAPI changes related to the XDP or tc layer (e.g. ``cls_bpf``),
+the convention is that those control-path related changes are added to
 iproute2's BPF loader as well from user space side. This is not only
 useful to have UAPI changes properly designed to be usable, but also
 to make those changes available to a wider user base of major
@@ -295,14 +296,14 @@ and can be found at:
 
   https://git.kernel.org/pub/scm/linux/kernel/git/shemminger/iproute2.git/
 
-The patches need to have a subject prefix of '[PATCH iproute2 master]'
-or '[PATCH iproute2 net-next]'. 'master' or 'net-next' describes the
-target branch where the patch should be applied to. Meaning, if kernel
-changes went into the net-next kernel tree, then the related iproute2
-changes need to go into the iproute2 net-next branch, otherwise they
-can be targeted at master branch. The iproute2 net-next branch will get
-merged into the master branch after the current iproute2 version from
-master has been released.
+The patches need to have a subject prefix of '``[PATCH iproute2
+master]``' or '``[PATCH iproute2 net-next]``'. '``master``' or
+'``net-next``' describes the target branch where the patch should be
+applied to. Meaning, if kernel changes went into the net-next kernel
+tree, then the related iproute2 changes need to go into the iproute2
+net-next branch, otherwise they can be targeted at master branch. The
+iproute2 net-next branch will get merged into the master branch after
+the current iproute2 version from master has been released.
 
 Like BPF, the patches end up in patchwork under the netdev project and
 are delegated to 'shemminger' for further processing:
@@ -316,11 +317,11 @@ patches *prior* to submission. Never rush them! If maintainers find
 that your patches have not been properly tested, it is a good way to
 get them grumpy. Testing patch submissions is a hard requirement!
 
-Note, fixes that go to bpf tree *must* have a Fixes: tag included. The
-same applies to fixes that target bpf-next, where the affected commit
-is in net-next (or in some cases bpf-next). The Fixes: tag is crucial
-in order to identify follow-up commits and tremendously helps for people
-having to do backporting, so it is a must have!
+Note, fixes that go to bpf tree *must* have a ``Fixes:`` tag included.
+The same applies to fixes that target bpf-next, where the affected
+commit is in net-next (or in some cases bpf-next). The ``Fixes:`` tag is
+crucial in order to identify follow-up commits and tremendously helps
+for people having to do backporting, so it is a must have!
 
 We also don't accept patches with an empty commit message. Take your
 time and properly write up a high quality commit message, it is
@@ -398,9 +399,9 @@ A: The same rules apply as with netdev patch submissions in general, see
 
   `Documentation/networking/netdev-FAQ.txt`_
 
-Never add "Cc: stable@vger.kernel.org" to the patch description, but
+Never add "``Cc: stable@vger.kernel.org``" to the patch description, but
 ask the BPF maintainers to queue the patches instead. This can be done
-with a note, for example, under the "---" part of the patch which does
+with a note, for example, under the ``---`` part of the patch which does
 not go into the git log. Alternatively, this can be done as a simple
 request by mail instead.
 
@@ -452,9 +453,9 @@ document for further documentation.
 
 Q: Which BPF kernel selftests version should I run my kernel against?
 ---------------------------------------------------------------------
-A: If you run a kernel xyz, then always run the BPF kernel selftests from
-that kernel xyz as well. Do not expect that the BPF selftest from the
-latest mainline tree will pass all the time.
+A: If you run a kernel ``xyz``, then always run the BPF kernel selftests
+from that kernel ``xyz`` as well. Do not expect that the BPF selftest
+from the latest mainline tree will pass all the time.
 
 In particular, test_bpf.c and test_verifier.c have a large number of
 test cases and are constantly updated with new BPF test sequences, or
@@ -472,8 +473,8 @@ All major distributions these days ship LLVM with BPF back end enabled,
 so for the majority of use-cases it is not required to compile LLVM by
 hand anymore, just install the distribution provided package.
 
-LLVM's static compiler lists the supported targets through 'llc --version',
-make sure BPF targets are listed. Example::
+LLVM's static compiler lists the supported targets through
+``llc --version``, make sure BPF targets are listed. Example::
 
      $ llc --version
      LLVM (http://llvm.org/):
@@ -547,11 +548,12 @@ Q: New BPF instruction for kernel and LLVM
 Q: I have added a new BPF instruction to the kernel, how can I integrate
 it into LLVM?
 
-A: LLVM has a -mcpu selector for the BPF back end in order to allow the
-selection of BPF instruction set extensions. By default the 'generic'
-processor target is used, which is the base instruction set (v1) of BPF.
+A: LLVM has a ``-mcpu`` selector for the BPF back end in order to allow
+the selection of BPF instruction set extensions. By default the
+``generic`` processor target is used, which is the base instruction set
+(v1) of BPF.
 
-LLVM has an option to select -mcpu=probe where it will probe the host
+LLVM has an option to select ``-mcpu=probe`` where it will probe the host
 kernel for supported BPF instruction set extensions and selects the
 optimal set automatically.
 
@@ -568,13 +570,13 @@ For cross-compilation, a specific version can be select manually as well ::
 
 Newly added BPF instructions to the Linux kernel need to follow the same
 scheme, bump the instruction set version and implement probing for the
-extensions such that -mcpu=probe users can benefit from the optimization
-transparently when upgrading their kernels.
+extensions such that ``-mcpu=probe`` users can benefit from the
+optimization transparently when upgrading their kernels.
 
 If you are unable to implement support for the newly added BPF instruction
 please reach out to BPF developers for help.
 
-By the way, the BPF kernel selftests run with -mcpu=probe for better
+By the way, the BPF kernel selftests run with ``-mcpu=probe`` for better
 test coverage.
 
 Q: clang flag for target bpf?
@@ -588,18 +590,18 @@ independent, ``-target <arch>`` still has some impact on generated code:
 
 - BPF program may recursively include header file(s) with file scope
   inline assembly codes. The default target can handle this well,
-  while bpf target may fail if bpf backend assembler does not
+  while ``bpf`` target may fail if bpf backend assembler does not
   understand these assembly codes, which is true in most cases.
 
-- When compiled without -g, additional elf sections, e.g.,
+- When compiled without ``-g``, additional elf sections, e.g.,
   .eh_frame and .rela.eh_frame, may be present in the object file
-  with default target, but not with bpf target.
+  with default target, but not with ``bpf`` target.
 
 - The default target may turn a C switch statement into a switch table
   lookup and jump operation. Since the switch table is placed
   in the global readonly section, the bpf program will fail to load.
   The bpf target does not support switch table optimization.
-  The clang option "-fno-jump-tables" can be used to disable
+  The clang option ``-fno-jump-tables`` can be used to disable
   switch table generation.
 
 - For clang ``-target bpf``, it is guaranteed that pointer or long /
@@ -610,9 +612,9 @@ independent, ``-target <arch>`` still has some impact on generated code:
   meaning in case of 32 bit architecture, pointer or long / unsigned
   long types e.g. in BPF context structure will have width of 32 bit
   while the BPF LLVM back end still operates in 64 bit. The native
-  target is mostly needed in tracing for the case of walking pt_regs
+  target is mostly needed in tracing for the case of walking ``pt_regs``
   or other kernel structures where CPU's register width matters.
-  Otherwise, clang -target bpf is generally recommended.
+  Otherwise, ``clang -target bpf`` is generally recommended.
 
 You should use default target when:
 
@@ -621,7 +623,7 @@ You should use default target when:
 
 - You can add ``-fno-jump-tables`` to work around the switch table issue.
 
-Otherwise, you can use bpf target.
+Otherwise, you can use ``bpf`` target.
 
 
 .. Links
