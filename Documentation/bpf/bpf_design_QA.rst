@@ -43,8 +43,8 @@ A: NO. BPF allows only register R0 to be used as return value.
 Q: can more than 5 function arguments be supported in the future?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 A: NO. BPF calling convention only allows registers R1-R5 to be used
-   as arguments. BPF is not a standalone instruction set.
-   (unlike x64 ISA that allows msft, cdecl and other conventions)
+as arguments. BPF is not a standalone instruction set.
+(unlike x64 ISA that allows msft, cdecl and other conventions)
 
 Q: can BPF programs access instruction pointer or return address?
 -----------------------------------------------------------------
