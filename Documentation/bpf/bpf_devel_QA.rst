@@ -38,8 +38,8 @@ In case a buggy commit has already been identified, make sure to keep
 the actual commit authors in Cc as well for the report. They can
 typically be identified through the kernel's git tree.
 
-   Please do *not* report BPF issues to bugzilla.kernel.org since it
-   is a guarantee that the reported issue will be overlooked.
+**Please do NOT report BPF issues to bugzilla.kernel.org since it
+is a guarantee that the reported issue will be overlooked.**
 
 Submitting patches
 ==================
