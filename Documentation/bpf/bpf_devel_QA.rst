@@ -376,7 +376,7 @@ the commit has already been applied in the related ``linux-*.y`` branches:
 If not the case, then drop an email to the BPF maintainers with the
 netdev kernel mailing list in Cc and ask for the fix to be queued up:
 
- netdev@vger.kernel.org
+  netdev@vger.kernel.org
 
 The process in general is the same as on netdev itself, see also the
 `netdev FAQ`_ document.
