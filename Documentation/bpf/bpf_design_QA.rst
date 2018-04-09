@@ -23,7 +23,7 @@ Q: Is BPF a generic virtual machine ?
 -------------------------------------
 A: NO.
 
-BPF is generic instruction set _with_ C calling convention.
+BPF is generic instruction set *with* C calling convention.
 -----------------------------------------------------------
 
 Q: Why C calling convention was chosen?
@@ -187,7 +187,7 @@ Q: Can BPF overwrite arbitrary kernel memory?
 ---------------------------------------------
 A: NO.
 
-Tracing bpf programs can _read_ arbitrary memory with bpf_probe_read()
+Tracing bpf programs can *read* arbitrary memory with bpf_probe_read()
 and bpf_probe_read_str() helpers. Networking programs cannot read
 arbitrary memory, since they don't have access to these helpers.
 Programs can never read or write arbitrary memory directly.
