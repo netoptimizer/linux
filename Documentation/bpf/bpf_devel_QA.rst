@@ -46,7 +46,6 @@ Submitting patches
 
 Q: To which mailing list do I need to submit my BPF patches?
 ------------------------------------------------------------
-
 A: Please submit your BPF patches to the netdev kernel mailing list:
 
  netdev@vger.kernel.org
@@ -242,7 +241,6 @@ affect prior use-cases. Thus, treat those test cases as: verifier
 behavior that is not tracked in test_verifier.c could potentially
 be subject to change.
 
-
 Q: samples/bpf preference vs selftests?
 ---------------------------------------
 Q: When should I add code to `samples/bpf/`_ and when to BPF kernel
@@ -367,7 +365,6 @@ Stable submission
 
 Q: I need a specific BPF commit in stable kernels. What should I do?
 --------------------------------------------------------------------
-
 A: In case you need a specific fix in stable kernels, first check whether
 the commit has already been applied in the related ``linux-*.y`` branches:
 
@@ -624,7 +621,6 @@ You should use default target when:
 - You can add ``-fno-jump-tables`` to work around the switch table issue.
 
 Otherwise, you can use ``bpf`` target.
-
 
 .. Links
 .. _Documentation/process/: https://www.kernel.org/doc/html/latest/process/
