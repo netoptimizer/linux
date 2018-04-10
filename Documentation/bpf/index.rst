@@ -5,7 +5,7 @@ BPF documentation
 .. _man-pages: https://www.kernel.org/doc/man-pages/
 .. _bpf(2): http://man7.org/linux/man-pages/man2/bpf.2.html
 
-This the starting point for the kernels documentation on the BPF
+This is the starting point for the kernels documentation on the BPF
 (Berkeley Packet Filter) facility, with a focus on the extended BPF
 version.
 
