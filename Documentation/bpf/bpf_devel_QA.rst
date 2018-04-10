@@ -14,8 +14,8 @@ related to BPF.
     :local:
     :depth: 2
 
-Reporting bugs:
-===============
+Reporting bugs
+==============
 
 Q: How do I report bugs for BPF kernel code?
 --------------------------------------------
