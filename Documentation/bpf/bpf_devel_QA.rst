@@ -122,10 +122,8 @@ request)::
   pull-request: bpf yyyy-mm-dd
   pull-request: bpf-next yyyy-mm-dd
 
-Q: Howto indicate which tree (bpf vs. bpf-next)
------------------------------------------------
-Q: How do I indicate which tree (bpf vs. bpf-next) my patch should be
-applied to?
+Q: How do I indicate which tree (bpf vs. bpf-next) my patch should be applied to?
+---------------------------------------------------------------------------------
 
 A: The process is the very same as described in the `netdev FAQ`_, so
 please read up on it. The subject line must indicate whether the
@@ -195,10 +193,8 @@ A: We try to keep the latency low. The usual time to feedback will
 be around 2 or 3 business days. It may vary depending on the
 complexity of changes and current patch load.
 
-Q: Pull request frequency towards other kernel trees
-----------------------------------------------------
-Q: How often do you send pull requests to major kernel trees like
-net or net-next?
+Q: How often do you send pull requests to major kernel trees like net or net-next?
+----------------------------------------------------------------------------------
 
 A: Pull requests will be sent out rather often in order to not
 accumulate too many patches in bpf or bpf-next.
