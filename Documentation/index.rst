@@ -89,6 +89,17 @@ needed).
    crypto/index
    filesystems/index
 
+BPF documentation
+-----------------
+
+These books provide details on Berkeley Packet Filter (BPF).
+
+.. toctree::
+   :maxdepth: 2
+
+   bpf/index
+
+
 Architecture-specific documentation
 -----------------------------------
 
